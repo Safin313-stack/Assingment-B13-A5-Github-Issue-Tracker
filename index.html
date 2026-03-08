@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GitHub Issues Tracker</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- ==================== LOGIN PAGE ==================== -->
+  <div id="loginPage" class="login-page">
+    <div class="login-card">
+
+      <div class="login-logo">
+        <img src="github-logo.png" alt="GitHub"/>
+        <span class="login-logo-text">GitHub Issues Tracker</span>
+      </div>
+      <p class="login-tagline">Track and manage your project issues</p>
+
+      <div id="errBox" class="err-box">⚠️ Invalid username or password. Try again.</div>
+
+      <div class="field">
+        <label for="uname">Username</label>
+        <input id="uname" type="text" placeholder="Enter your username" autocomplete="off"/>
+      </div>
+      <div class="field">
+        <label for="upass">Password</label>
+        <input id="upass" type="password" placeholder="Enter your password"/>
+      </div>
+
+      <button class="btn-purple" id="btnLogin">Sign in</button>
+
+      <div class="demo-area">
+        <div class="demo-title">Demo Credentials</div>
+        <div class="demo-pills">
+          <span class="dpill">👤 admin</span>
+          <span class="dpill">🔑 admin123</span>
+        </div>
+        <button class="btn-fill" id="btnFill">Use demo →</button>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ==================== MAIN APP ==================== -->
+  <div id="mainApp" class="main-app">
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <div class="nav">
+        <div class="nav-logo">
+          <img src="github-logo.png" alt="GitHub"/>
+          <span class="nav-logo-text">GitHub Issues Tracker</span>
+        </div>
+        <div class="nav-gap"></div>
+        <div class="nav-search">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="m21 21-4.35-4.35"/>
+          </svg>
+          <input id="searchInput" type="text" placeholder="Search issues..."/>
+        </div>
+        <button class="btn-new" id="btnSearch">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="m21 21-4.35-4.35"/>
+          </svg>
+          Search
+        </button>
+      </div>
+    </nav>
+
+    <!-- CONTENT -->
+    <div class="wrap">
+
+      <!-- TABS -->
+      <div class="tabs-row">
+        <button class="tab active" data-tab="all">All</button>
+        <button class="tab" data-tab="open">Open</button>
+        <button class="tab" data-tab="closed">Closed</button>
+      </div>
+
+      <!-- ISSUES PANEL -->
+      <div class="issues-panel">
+
+        <!-- Panel header -->
+        <div class="issues-header">
+          <div class="issues-header-left">
+            <div class="issues-icon-wrap">
+              <img src="Aperture.png" alt="issues"/>
+            </div>
+            <div>
+              <div class="issues-title" id="issueCount">Loading issues…</div>
+              <div class="issues-sub">Track and manage your project issues</div>
+            </div>
+          </div>
+          <div class="issues-legend">
+            <span><span class="legend-dot dot-open"></span>Open</span>
+            <span><span class="legend-dot dot-closed"></span>Closed</span>
+          </div>
+        </div>
+
+        <!-- Spinner -->
+        <div id="spinner" class="spinner-wrap">
+          <div class="spin"></div>
+          <span>Fetching issues…</span>
+        </div>
+
+        <!-- No results -->
+        <div id="noRes" class="no-res">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="1.5" style="opacity:.3">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="m21 21-4.35-4.35"/>
+          </svg>
+          <p>No issues found</p>
+          <span style="font-size:12px">Try a different search or filter</span>
+        </div>
+
+        <!-- Cards grid -->
+        <div id="cardsGrid" class="cards-grid"></div>
+
+      </div><!-- /issues-panel -->
+    </div><!-- /wrap -->
+  </div><!-- /mainApp -->
+
+
+  <!-- ==================== MODAL ==================== -->
+  <div id="overlay" class="overlay" style="display:none">
+    <div id="modal" class="modal"></div>
+  </div>
+
+
+  <script src="app.js"></script>
+</body>
+</html>
