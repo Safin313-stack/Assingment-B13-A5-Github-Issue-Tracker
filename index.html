@@ -1,3 +1,4 @@
+<!-- GitHub Issues Tracker - A webapp to track and manage GitHub issues -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +10,6 @@
 </head>
 <body>
 
-  <!-- ==================== LOGIN PAGE ==================== -->
   <div id="loginPage" class="login-page">
     <div class="login-card">
 
@@ -45,10 +45,8 @@
   </div>
 
 
-  <!-- ==================== MAIN APP ==================== -->
   <div id="mainApp" class="main-app">
 
-    <!-- NAVBAR -->
     <nav class="navbar">
       <div class="nav">
         <div class="nav-logo">
@@ -73,20 +71,16 @@
       </div>
     </nav>
 
-    <!-- CONTENT -->
     <div class="wrap">
 
-      <!-- TABS -->
       <div class="tabs-row">
         <button class="tab active" data-tab="all">All</button>
         <button class="tab" data-tab="open">Open</button>
         <button class="tab" data-tab="closed">Closed</button>
       </div>
 
-      <!-- ISSUES PANEL -->
       <div class="issues-panel">
 
-        <!-- Panel header -->
         <div class="issues-header">
           <div class="issues-header-left">
             <div class="issues-icon-wrap">
@@ -103,13 +97,11 @@
           </div>
         </div>
 
-        <!-- Spinner -->
         <div id="spinner" class="spinner-wrap">
           <div class="spin"></div>
           <span>Fetching issues…</span>
         </div>
 
-        <!-- No results -->
         <div id="noRes" class="no-res">
           <svg width="40" height="40" viewBox="0 0 24 24" fill="none"
                stroke="currentColor" stroke-width="1.5" style="opacity:.3">
@@ -120,15 +112,13 @@
           <span style="font-size:12px">Try a different search or filter</span>
         </div>
 
-        <!-- Cards grid -->
         <div id="cardsGrid" class="cards-grid"></div>
 
-      </div><!-- /issues-panel -->
-    </div><!-- /wrap -->
-  </div><!-- /mainApp -->
+      </div>
+    </div>
+  </div>
 
 
-  <!-- ==================== MODAL ==================== -->
   <div id="overlay" class="overlay" style="display:none">
     <div id="modal" class="modal"></div>
   </div>

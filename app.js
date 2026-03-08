@@ -1,3 +1,5 @@
+// GitHub Issues Tracker - JavaScript Application
+// Handles authentication, fetching issues, rendering cards, search, and modal functionality
 const API='https://phi-lab-server.vercel.app/api/v1/lab';
 const OPEN_IMG="Open-Status.png";
 const CLOSED_IMG="Closed- Status .png";
